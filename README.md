@@ -13,7 +13,7 @@ Users will be able to do the following:
 
 Setup/Installation Requirements
 
-$ git clone
+Clone this repository
 
 $ cd activerecord_codereview/
 
