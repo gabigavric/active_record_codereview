@@ -31,3 +31,11 @@ end
 get('/delete_brand')do
   erb(:brands)
 end
+
+get('/update_store')do
+  erb(:stores)
+end
+
+get('/update_brand')do
+  erb(:brands)
+end
