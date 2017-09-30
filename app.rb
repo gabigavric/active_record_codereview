@@ -19,3 +19,15 @@ end
 get('/add_brand')do
   erb(:add_brand)
 end
+
+get('/individual_store')do
+  erb(:individual_store)
+end
+
+get('/delete_store')do
+  erb(:stores)
+end
+
+get('/delete_brand')do
+  erb(:brands)
+end
