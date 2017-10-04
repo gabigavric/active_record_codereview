@@ -3,7 +3,7 @@ class InitialDatabase < ActiveRecord::Migration[5.1]
     create_table(:stores) do |t|
       t.column(:name, :string)
     end
-    create_table(:shoe) do |t|
+    create_table(:shoes) do |t|
       t.column(:name, :string)
       t.column(:price, :money, default: 0)
     end
