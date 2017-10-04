@@ -9,6 +9,7 @@ get('/create_fake_data') do
   Store.create({:name => "Store Washington Square"})
   Store.create({:name => "Store Union Square"})
   Store.create({:name => "Store Alabama Square"})
+  redirect('/')
 end
 
 get('/')do
@@ -16,7 +17,19 @@ get('/')do
   erb(:stores)
 end
 
+get('/edit_store/:id')do
+  @store = Store.find(params["id"])
+  erb(:edit_store)
+end
+
+post('/edit_store')do
+  @store = Store.find(params["store_id"])
+  @store.update({:name =>  params['store_name']})
+  redirect('/')
+end
+
 get('/add_store')do
+  @store = Store.new()
   erb(:edit_store)
 end
 
@@ -30,11 +43,7 @@ end
 
 get('/delete_store/:id')do
   Store.destroy(params[:id])
-
+  redirect('/')
 end
 
-
-get('/edit_store')do
-  erb(:edit_store)
-end
 

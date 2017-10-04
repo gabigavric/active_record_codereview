@@ -15,7 +15,7 @@
       <% @stores.each do |store| %>
           <tr>
             <th scope="row"></th>
-            <td><a href="/edit_store" ><i class="fa fa-edit"></i></a>  <a href="/individual_store" ><%=store.name%></a></td>
+            <td><a href="/edit_store/<%=store.id%>" ><i class="fa fa-edit"></i></a>  <a href="/individual_store" ><%=store.name%></a></td>
             <td><a href="/delete_store/<%=store.id%>" ><i class="fa fa-trash"></i></a></td>
           </tr>
       <% end %>
@@ -28,4 +28,4 @@
   </tbody>
 </table>
 <legend>Add a new store</legend>
-<a class="btn btn-primary" href="/edit_store">Add a new Store</a>
+<a class="btn btn-primary" href="/add_store">Add a new Store</a>
