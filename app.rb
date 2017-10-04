@@ -37,11 +37,9 @@ get('/add_store')do
   erb(:edit_store)
 end
 
-
 get('/add_shoe')do
   erb(:add_shoe)
 end
-
 
 post('/add_shoe')do
   Shoe.create({:name => params['shoe_name'],:price => params['price']})

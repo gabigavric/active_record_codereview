@@ -32,15 +32,25 @@
 <fieldset>
 
   <legend>Add existing shoes to this store:</legend>
-  <div>
-    <input type="checkbox" id="shoes" name="shoes" value="1234">
-    <label for="coding">Nike $195.00</label>
-  </div>
-  <div>
-    <input type="checkbox" id="shoes" name="shoes" value="1234">
-    <label for="music">Rebook $200.00</label>
-  </div>
-  <button class="btn btn-primary" type="submit">Add</button>
+
+  <% if @shoes.any? %>
+      <% @shoes.each do |shoe| %>
+          <div>
+            <input type="checkbox" id="shoe_id" name="shoes" value="<%=shoe.id%>">
+            <label for="coding"><%=shoe.name%> <%=shoe.price%></label>
+          </div>
+
+      <% end %>
+      <button class="btn btn-primary" type="submit">Add</button>
+  <% else %>
+      <div>
+        There are currently no shoes
+      </div>
+
+  <% end %>
+
+
+
 </fieldset>
 </form>
 
