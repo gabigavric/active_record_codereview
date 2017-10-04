@@ -11,27 +11,38 @@
   <tbody>
     <tr>
       <th scope="row"></th>
-      <td><a href="url" target="_blank">Flip Flops</a></td>
-      <td><a href="url" target="_blank">Price</a></td>
+      <td>Flip Flops</td>
+      <td>Price</td>
     </tr>
     <tr>
       <th scope="row"></th>
-      <td><a href="url" target="_blank">Vans</a></td>
-      <td><a href="url" target="_blank">Price</a></td>
+      <td>Vans</td>
+      <td>Price</td>
     </tr>
     <tr>
       <th scope="row"></th>
-      <td><a href="url" target="_blank">Crocks</a></td>
-      <td><a href="url" target="_blank">Price</a></td>
+      <td>Crocks</td>
+      <td>Price</td>
     </tr>
   </tbody>
 </table>
 
-<div class="container">
-  <h1>Add a shoe to this store only:</h1>
-  <form action="/add_store">
-    <label for ="brand_name">Shoe Name</label>
-    <input type="text" name="brand_name" id="brand_name" />
-    <button type="submit">Add</button>
-  </form>
-</div>
+
+<form action="/add_shoes_to_store">
+<fieldset>
+
+  <legend>Add existing shoes to this store:</legend>
+  <div>
+    <input type="checkbox" id="shoes" name="shoes" value="1234">
+    <label for="coding">Nike $195.00</label>
+  </div>
+  <div>
+    <input type="checkbox" id="shoes" name="shoes" value="1234">
+    <label for="music">Rebook $200.00</label>
+  </div>
+  <button class="btn btn-primary" type="submit">Add</button>
+</fieldset>
+</form>
+
+
+

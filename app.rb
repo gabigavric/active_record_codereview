@@ -4,20 +4,20 @@ Bundler.require(:default)
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
-get('/brands')do
-  erb(:brands)
+get('/shoes')do
+  erb(:shoes)
 end
 
-get('/stores')do
+get('/')do
   erb(:stores)
 end
 
 get('/add_store')do
-  erb(:add_store)
+  erb(:edit_store)
 end
 
-get('/add_brand')do
-  erb(:add_brand)
+get('/add_shoe')do
+  erb(:add_shoe)
 end
 
 get('/individual_store')do
@@ -28,14 +28,14 @@ get('/delete_store')do
   erb(:stores)
 end
 
-get('/delete_brand')do
-  erb(:brands)
+get('/delete_shoe')do
+  erb(:shoes)
 end
 
-get('/update_store')do
-  erb(:stores)
+get('/edit_store')do
+  erb(:edit_store)
 end
 
-get('/update_brand')do
-  erb(:brands)
+get('/update_shoe')do
+  erb(:shoes)
 end

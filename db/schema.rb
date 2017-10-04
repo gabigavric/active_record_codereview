@@ -15,12 +15,12 @@ ActiveRecord::Schema.define(version: 20170929200644) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "brands", force: :cascade do |t|
-    t.string "brand"
+  create_table "shoes", force: :cascade do |t|
+    t.string "shoe"
     t.money "price", scale: 2
   end
 
-  create_table "brands_stores", force: :cascade do |t|
+  create_table "shoes_stores", force: :cascade do |t|
     t.integer "brand_id"
     t.integer "store_id"
   end

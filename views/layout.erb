@@ -3,13 +3,17 @@
   <head>
     <meta charset="utf-8">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="/styles.css" type="text/css">
     <title>Shoes!</title>
   </head>
   <body>
-    <div class="container">
-      <%= yield %>
-      <a href="/">Go Home</a>
-    </div>
+  <div class="container">
+
+    <a href="/" class="btn btn-primary" >GO Home</a>
+    <a class="btn btn-primary" href="/add_shoe">Add New Shoe</a>
+    <%= yield %>
+  </div>
+
   </body>
 </html>
