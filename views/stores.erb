@@ -1,5 +1,7 @@
 <h1>List of Stores:</h1>
 
+
+
 <table class="table">
   <thead class="thead-inverse">
     <tr>
@@ -9,21 +11,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td><a href="/edit_store" ><i class="fa fa-edit"></i></a>  <a href="/individual_store" >Walmart</a></td>
-      <td><a href="#" ><i class="fa fa-trash"></i></a></td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td><a href="/edit_store" ><i class="fa fa-edit"></i></a>  <a href="/stores" >Fred Meyer</a></td>
-      <td><a href="#" ><i class="fa fa-trash"></i></a></td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td><a href="/edit_store" ><i class="fa fa-edit"></i></a>  <a href="/stores" >Ross</a></td>
-      <td><a href="#" ><i class="fa fa-trash"></i></a></td>
-    </tr>
+  <% if @stores.any? %>
+      <% @stores.each do |store| %>
+          <tr>
+            <th scope="row"></th>
+            <td><a href="/edit_store" ><i class="fa fa-edit"></i></a>  <a href="/individual_store" ><%=store.name%></a></td>
+            <td><a href="/delete_store/<%=store.id%>" ><i class="fa fa-trash"></i></a></td>
+          </tr>
+      <% end %>
+  <% else %>
+
+        <tr>
+          <th scope="row"></th>
+          <td><p>There are currently no stores.</p></td><td></td></tr>
+  <% end %>
   </tbody>
 </table>
 <legend>Add a new store</legend>
