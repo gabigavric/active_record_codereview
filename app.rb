@@ -27,7 +27,7 @@ post('/edit_store')do
     @store = Store.find(params["store_id"])
     @store.update({:name =>  params['store_name']})
   else
-    Store.create({:name => params['store_name']})
+     Store.create({:name => params['store_name']})
   end
   redirect('/')
 end
@@ -46,9 +46,16 @@ post('/add_shoe')do
   redirect('/')
 end
 
-get('/individual_store')do
+get('/individual_store/:store_id')do
+  @store = Store.find(params["store_id"])
   @shoes = Shoe.all()
   erb(:individual_store)
+end
+
+post('/individual_store')do
+  @store = Store.find(params["store_id"])
+  shoe = Shoe.find(params["shoe_id"])
+  @store.shoes.push(shoe)
 end
 
 get('/delete_store/:id')do

@@ -15,7 +15,7 @@
       <% @stores.each do |store| %>
           <tr>
             <th scope="row"></th>
-            <td><a href="/edit_store/<%=store.id%>" ><i class="fa fa-edit"></i></a>  <a href="/individual_store" ><%=store.name%></a></td>
+            <td><a href="/edit_store/<%=store.id%>" ><i class="fa fa-edit"></i></a>  <a href="/individual_store/<%=store.id%>" ><%=store.name%></a></td>
             <td><a href="/delete_store/<%=store.id%>" ><i class="fa fa-trash"></i></a></td>
           </tr>
       <% end %>

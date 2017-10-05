@@ -1,4 +1,4 @@
-<h1>Walmart has these shoes for these prices:</h1>
+<h1><%=@store.name%> has these shoes for these prices:</h1>
 
 <table class="table">
   <thead class="thead-inverse">
@@ -28,19 +28,19 @@
 </table>
 
 
-<form action="/add_shoes_to_store">
+<form action="/individual_store" method="post" >
+
+<input type="hidden" name="store_id" id="store_id" value="<%=@store.id%>" >
 <fieldset>
 
   <legend>Add existing shoes to this store:</legend>
 
   <% if @shoes.any? %>
+      <select name="shoe_id">
       <% @shoes.each do |shoe| %>
-          <div>
-            <input type="checkbox" id="shoe_id" name="shoes" value="<%=shoe.id%>">
-            <label for="coding"><%=shoe.name%> <%=shoe.price%></label>
-          </div>
-
+            <option value="<%=shoe.id%>"><%=shoe.name%> <%=shoe.price%></option>
       <% end %>
+      </select>
       <button class="btn btn-primary" type="submit">Add</button>
   <% else %>
       <div>
@@ -48,7 +48,6 @@
       </div>
 
   <% end %>
-
 
 
 </fieldset>

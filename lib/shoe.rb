@@ -1,3 +1,6 @@
 class Shoe < ActiveRecord::Base
-  has_and_belongs_to_many(:store)
+  has_many :shoesstores
+  has_many :shoes, through: :shoesstores
+  validates_uniqueness_of :name
+  validates(:name, {:length => {:maximum => 100}, :presence => true})
 end
