@@ -1,4 +1,4 @@
-class Shoesstores <ActiveRecord::Base
+class Inventory <ActiveRecord::Base
   belongs_to :shoe
   belongs_to :store
 end

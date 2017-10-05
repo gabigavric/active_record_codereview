@@ -15,18 +15,24 @@ ActiveRecord::Schema.define(version: 20171004081450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "inventories", force: :cascade do |t|
+    t.integer "store_id"
+    t.integer "shoe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "shoes", force: :cascade do |t|
     t.string "name"
     t.money "price", scale: 2, default: "0.0"
-  end
-
-  create_table "shoes_stores", force: :cascade do |t|
-    t.integer "store_id"
-    t.integer "shoe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stores", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

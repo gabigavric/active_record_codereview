@@ -53,9 +53,9 @@ get('/individual_store/:store_id')do
 end
 
 post('/individual_store')do
-  @store = Store.find(params["store_id"])
-  shoe = Shoe.find(params["shoe_id"])
-  @store.shoes.push(shoe)
+  store = Store.find(params["store_id"])
+  store.inventories.create({:store => store, :shoe => Shoe.find(params["shoe_id"])})
+
 end
 
 get('/delete_store/:id')do
