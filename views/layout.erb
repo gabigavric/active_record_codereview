@@ -8,13 +8,30 @@
     <title>Shoes!</title>
   </head>
   <body>
-  <div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <a href="/" class="btn btn-primary btn-sm" >Home</a>
-    <a class="btn btn-primary btn-sm" href="/add_store">Add New Store</a>
-    <a class="btn btn-primary btn-sm" href="/add_shoe">Add New Shoe</a>
-    <%= yield %>
-  </div>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/add_store">Add Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/add_shoe">New Shoe</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
 
   </body>
 </html>
