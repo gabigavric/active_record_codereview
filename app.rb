@@ -68,7 +68,11 @@ post('/individual_store')do
   store = Store.find(params["store_id"])
   store.inventories.create({:store => store, :shoe => Shoe.find(params["shoe_id"])})
   redirect "/individual_store/#{store.id}"
+end
 
+get('/individual_store/:store_id/del_inv/:shoe_id')do
+  store = Store.find(params["store_id"])
+  store.inventories.destroy(:store => store, :shoe => Shoe.find(params["shoe_id"]))
 end
 
 get('/delete_store/:id')do
