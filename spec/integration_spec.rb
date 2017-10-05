@@ -35,5 +35,22 @@ describe 'the shoe creation path', {:type => :feature} do
     click_button('Add')
     expect(page).to have_content('List of Stores:')
   end
+end
+
+
+describe 'individual store' , {:type => :feature} do
+  it 'list all of the shoes in a store' do
+    store = Store.create({:name => "Cabelas"})
+    visit '/'
+    click_link('Cabelas')
+    expect(page).to have_content('Cabelas has these shoes for these prices:')
   end
 
+  it 'add existing shoes to this store' do
+
+  end
+
+  it 'list all of the shoes in a store' do
+
+  end
+end
