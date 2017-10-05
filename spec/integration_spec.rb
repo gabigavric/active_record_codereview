@@ -22,10 +22,18 @@ describe 'the store creation path', {:type => :feature} do
   end
 end
 
-describe 'the shoe creation path',  {:type => :feature} do
-it 'takes the user to the homepage where they can add a shoe' do
+describe 'the shoe creation path', {:type => :feature} do
+  it 'takes the user to the homepage where they can add a shoe' do
     visit '/'
     click_link('Add New Shoe')
     expect(page).to have_content('Add a shoe!')
   end
-end
+  it 'takes the user to the add shoe page' do
+    visit '/add_shoe'
+    fill_in('shoe_name', :with => 'Flip Flops')
+    fill_in('price', :with => '25')
+    click_button('Add')
+    expect(page).to have_content('List of Stores:')
+  end
+  end
+
