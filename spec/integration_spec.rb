@@ -13,5 +13,11 @@ describe 'the store creation path', {:type => :feature} do
     click_link('Add a new Store')
     expect(page).to have_content('Store Info')
   end
-end
 
+  it 'takes the user to the add store page' do
+    visit '/add_store'
+    fill_in('store_name', :with => 'Walmart')
+    click_button('Save')
+    expect(page).to have_content('List of Stores:')
+  end
+end
