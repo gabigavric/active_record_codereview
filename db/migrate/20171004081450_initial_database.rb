@@ -10,8 +10,8 @@ class InitialDatabase < ActiveRecord::Migration[5.1]
       t.timestamps
     end
     create_table(:inventories) do |t|
-      t.column(:store_id, :integer)
-      t.column(:shoe_id, :integer)
+      t.belongs_to :store, index: true
+      t.belongs_to :shoe, index: true
       t.timestamps
     end
   end
