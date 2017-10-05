@@ -1,56 +1,56 @@
-<h1><%=@store.name%> has these shoes for these prices:</h1>
+<h1><%= @store.name %> has these shoes for these prices:</h1>
 
 <table class="table">
   <thead class="thead-inverse">
-    <tr>
-      <th></th>
-      <th>Shoe Name</th>
-      <th>Price</th>
-    </tr>
+  <tr>
+    <th></th>
+    <th>Shoe Name</th>
+    <th>Price</th>
+  </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td>Flip Flops</td>
-      <td>Price</td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td>Vans</td>
-      <td>Price</td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td>Crocks</td>
-      <td>Price</td>
-    </tr>
+  <% if @store.shoes.any? %>
+      <% @store.shoes.each do |shoe| %>
+          <tr>
+            <th scope="row"></th>
+            <td><%=shoe.name %></td>
+            <td><%=shoe.price %></td>
+          </tr>
+      <% end %>
+  <% else %>
+      <tr>
+        <th scope="row"></th>
+        <td>No shoes available at this store</td>
+        <td>Price</td>
+      </tr>
+  <% end %>
   </tbody>
 </table>
 
 
-<form action="/individual_store" method="post" >
+<form action="/individual_store" method="post">
 
-<input type="hidden" name="store_id" id="store_id" value="<%=@store.id%>" >
-<fieldset>
+  <input type="hidden" name="store_id" id="store_id" value="<%= @store.id %>">
+  <fieldset>
 
-  <legend>Add existing shoes to this store:</legend>
+    <legend>Add existing shoes to this store:</legend>
 
-  <% if @shoes.any? %>
-      <select name="shoe_id">
-      <% @shoes.each do |shoe| %>
-            <option value="<%=shoe.id%>"><%=shoe.name%> <%=shoe.price%></option>
-      <% end %>
-      </select>
-      <button class="btn btn-primary" type="submit">Add</button>
-  <% else %>
-      <div>
-        There are currently no shoes
-      </div>
+    <% if @shoes.any? %>
+        <select name="shoe_id">
+          <% @shoes.each do |shoe| %>
+              <option value="<%= shoe.id %>"><%= shoe.name %> <%= shoe.price %></option>
+          <% end %>
+        </select>
+        <button class="btn btn-primary" type="submit">Add</button>
+    <% else %>
+        <div>
+          There are currently no shoes
+        </div>
 
-  <% end %>
+    <% end %>
 
 
-</fieldset>
+  </fieldset>
 </form>
 
 
