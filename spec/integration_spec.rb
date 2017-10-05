@@ -40,17 +40,24 @@ end
 
 describe 'individual store' , {:type => :feature} do
   it 'list all of the shoes in a store' do
-    store = Store.create({:name => "Cabelas"})
+    store1 = Store.create({:name => "Cabelas"})
+    shoe1 = Shoe.create({:name => "Nike", :price => 100.00})
+    shoe2 = Shoe.create({:name => "Puma", :price => 50.00})
     visit '/'
     click_link('Cabelas')
     expect(page).to have_content('Cabelas has these shoes for these prices:')
   end
 
   it 'add existing shoes to this store' do
-
+    visit '/'
+    click_link('Cabelas')
+    click_button('Add')
+    expect(page).to have_content('Nike')
   end
 
   it 'list all of the shoes in a store' do
-
+    visit '/'
+    click_link('Cabelas')
+    expect(page).to have_content('Nike')
   end
 end
