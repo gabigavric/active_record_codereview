@@ -21,3 +21,11 @@ describe 'the store creation path', {:type => :feature} do
     expect(page).to have_content('List of Stores:')
   end
 end
+
+describe 'the shoe creation path',  {:type => :feature} do
+it 'takes the user to the homepage where they can add a shoe' do
+    visit '/'
+    click_link('Add New Shoe')
+    expect(page).to have_content('Add a shoe!')
+  end
+end
